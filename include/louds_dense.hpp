@@ -412,7 +412,7 @@ position_t LoudsDense::getPrevPos(const position_t pos, bool* is_out_of_bound) c
 }
 
 bool LoudsDense::compareSuffixGreaterThan(const position_t pos, const std::string& key, 
-					  const level_t level, const bool inclusive, 
+					  const level_t level, const bool inclusive __attribute__((unused)), 
 					  LoudsDense::Iter& iter) const {
     position_t suffix_pos = getSuffixPos(pos, false);
     int compare = suffixes_->compare(suffix_pos, key, level);

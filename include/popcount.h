@@ -121,8 +121,10 @@ inline int select64_popcount_search(uint64_t x, int k) {
 inline int select64_broadword(uint64_t x, int k) {
     uint64_t word = x;
     int residual = k;
-    register uint64_t byte_sums;
-    
+
+    // to silence compiler. JianChen
+    // register uint64_t byte_sums;
+    uint64_t byte_sums;
     byte_sums = word - ( ( word & 0xa * ONES_STEP_4 ) >> 1 );
     byte_sums = ( byte_sums & 3 * ONES_STEP_4 ) + ( ( byte_sums >> 2 ) & 3 * ONES_STEP_4 );
     byte_sums = ( byte_sums + ( byte_sums >> 4 ) ) & 0x0f * ONES_STEP_8;

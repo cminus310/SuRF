@@ -174,7 +174,7 @@ SuRF::Iter SuRF::moveToKeyGreaterThan(const std::string& key, const bool inclusi
     return iter;
 }
 
-SuRF::Iter SuRF::moveToKeyLessThan(const std::string& key, const bool inclusive) const {
+SuRF::Iter SuRF::moveToKeyLessThan(const std::string& key, const bool inclusive __attribute__((unused))) const {
     SuRF::Iter iter = moveToKeyGreaterThan(key, false);
     if (!iter.isValid()) {
 	iter = moveToLast();
