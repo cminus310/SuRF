@@ -32,7 +32,6 @@ inline uint32_t Hash(const char* data, size_t n, uint32_t seed) {
 
     // Pick up remaining bytes
     switch (limit - data) {
-    [[fallthrough]];
     case 3:
 	h += static_cast<unsigned char>(data[2]) << 16;
     [[fallthrough]];
